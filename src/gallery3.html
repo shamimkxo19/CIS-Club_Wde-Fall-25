@@ -6,13 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gallery 3</title>
     <link rel="stylesheet" href="output.css" />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+
   </head>
   <body class="bg-gray-50">
     
   <!-- Header -->
    <header class="mx-auto">
       <!-- Navbar -->
-      <nav>
+      <nav id="come">
         <div class="navbar bg-main-color">
           <div class="flex-1">
             <div class="dropdown">
@@ -145,6 +152,15 @@
       </div>
     </div>
   </div>
+
+  <div class="fixed bottom-6 right-6 z-50">
+        <a
+          href="#come"
+          class="w-12 h-12 flex items-center justify-center rounded-full bg-main-color text-white hover:bg-gray-500 shadow-lg transition"
+        >
+          <i class="fas fa-arrow-up text-xl"></i>
+        </a>
+      </div>
 </footer>
 
     <script src="app.js"></script>
