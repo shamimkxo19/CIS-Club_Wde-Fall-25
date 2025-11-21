@@ -28,6 +28,7 @@ const modal = document.getElementById('imageModal');
 const modalImg = document.getElementById('modalImg');
 const closeBtn = document.getElementById('closeModal');
 
+// Open Modal
 function openModal(src) {
     modal.classList.remove('hidden');
     modalImg.src = src;
@@ -35,18 +36,29 @@ function openModal(src) {
     modalImg.style.cursor = 'zoom-in';
 }
 
+// Close Modal
 closeBtn.onclick = () => modal.classList.add('hidden');
-window.onclick = (e) => { if(e.target === modal) modal.classList.add('hidden'); };
 
+window.onclick = (e) => {
+    if (e.target === modal) modal.classList.add('hidden');
+};
+
+// Zoom In / Out
 modalImg.addEventListener('click', () => {
+
+    // Detect small devices
+    const isSmallDevice = window.innerWidth <= 640;  // <=640px = mobile
+    const zoomLevel = isSmallDevice ? 1.2 : 2;       // 1.3x for small screens, 2x for others
+
     if (modalImg.style.transform === 'scale(1)') {
-        modalImg.style.transform = 'scale(2)'; // zoom in 150%
+        modalImg.style.transform = `scale(${zoomLevel})`;
         modalImg.style.cursor = 'zoom-out';
     } else {
-        modalImg.style.transform = 'scale(1)'; // zoom out
+        modalImg.style.transform = 'scale(1)';
         modalImg.style.cursor = 'zoom-in';
     }
 });
+
 
 //Previous and nex buttons of gallery
 
