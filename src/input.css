@@ -1,0 +1,6 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+@theme{
+    --color-main-color: #2E3094;
+}
